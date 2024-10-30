@@ -7,6 +7,6 @@ Route::get('/', function () {
 })->middleware(['verify.shopify'])->name('home');
 
 
-Route::get('/home', function () {
-    return "Hello, World!";
-})->middleware(['auth.shopify'])->name('home');
+// Route::get('/home', function () {
+//     return "Hello, World!";
+// })->middleware(['auth.shopify'])->name('home');
