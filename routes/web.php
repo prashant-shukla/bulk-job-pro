@@ -3,9 +3,9 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    echo 'Hello World !!!';
-    // return redirect()->route('login');
-});
+    return view('welcome');
+})->middleware(['verify.shopify'])->name('home');
+
 
 Route::get('/home', function () {
     return "Hello, World!";
