@@ -1,14 +1,13 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
-Route::get('/', function () {
-    return view('welcome');
-})->middleware(['verify.shopify'])->name('home');
-
-
 // routes/web.php
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+
+Route::middleware(['verify.shopify'])->group(function () {
+    Route::get('/', [HomeController::class, 'welcome'])->name('home');
+});
 
 Route::middleware(['auth.shopify'])->group(function () {
     Route::get('/admin/select-products', [ProductController::class, 'index'])->name('admin.select-products');
