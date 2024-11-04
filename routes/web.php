@@ -14,3 +14,4 @@ Route::middleware(['verify.shopify'])->group(function () {
 // Route::get('/home', function () {
 //     return "Hello, World!";
 // })->middleware(['auth.shopify'])->name('home');
+
