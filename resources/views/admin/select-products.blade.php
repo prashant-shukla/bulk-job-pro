@@ -1,5 +1,4 @@
-<!-- resources/views/admin/select-products.blade.php -->
-@extends('layouts.app')
+@extends('shopify-app::layouts.default')
 
 @section('content')
 <div class="container">

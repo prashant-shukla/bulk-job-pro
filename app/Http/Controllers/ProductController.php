@@ -12,9 +12,6 @@ class ProductController extends Controller
     // Fetch products from Shopify
     public function index()
     {
-        echo 'HERE';
-        die; 
-        
         $shop = Auth::user();
         // $response = $shop->api()->rest('GET', '/admin/shop.json');
 
@@ -34,8 +31,6 @@ class ProductController extends Controller
                 } } ');
 
         // dd($products);
-
-        $products = [];
 
         return view('admin.select-products', compact('products'));
     }
