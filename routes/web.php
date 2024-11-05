@@ -6,9 +6,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 
 Route::middleware(['verify.shopify'])->group(function () {
-    // Route::get('/', [HomeController::class, 'welcome'])->name('home');
+    Route::get('/home', [HomeController::class, 'welcome'])->name('home');
     // Route::get('/admin/select-products', [ProductController::class, 'index'])->name('admin.select-products');
-    Route::get('/', [ProductController::class, 'index'])->name('home');
+    Route::get('/', [ProductController::class, 'index'])->name('admin.select-products');
     Route::post('/admin/save-products', [ProductController::class, 'saveSelection'])->name('admin.save-products');
 });
 
