@@ -13,8 +13,9 @@ class HomeController extends Controller
         $shop = Auth::user();
         $request = $shop->api()->rest('GET', '/admin/shop.json');
         // $request = $shop->api()->graph('{ shop { name } }');
-        echo "HERE: ";
-        echo $request['body']['shop']['name'];
+        echo "HERE: <pre>";
+        print_r($request);
+        echo '</pre>';
 
         $shopify = ShopifySDK::config($this->getShopifyConfig());
         $products = $shopify->Product->get();
