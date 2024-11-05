@@ -9,10 +9,10 @@ class HomeController extends Controller
     public function welcome()
     {
         $shop = Auth::user();
-        $request = $shop->api()->rest('GET', '/admin/shop.json');
-        // $request = $shop->api()->graph('{ shop { name } }');
+        $response = $shop->api()->rest('GET', '/admin/shop.json');
+        // $response = $shop->api()->graph('{ shop { name } }');
         echo '<pre>';
-        print_r($request);
+        print_r(json_encode($response));
         echo '</pre>';
 
         $totalProducts = 24;
