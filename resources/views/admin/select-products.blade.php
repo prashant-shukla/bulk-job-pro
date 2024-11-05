@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>Welcome to BulkJobPro</h1>
+        <h1>Nothing here</h1>
     </div>
 @endsection
 
