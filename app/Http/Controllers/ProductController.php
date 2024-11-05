@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Shopify\Clients\Rest;
 use App\Models\SelectedProduct;
 
 class ProductController extends Controller
@@ -13,11 +12,25 @@ class ProductController extends Controller
     // Fetch products from Shopify
     public function index()
     {
-        $session = Auth::user()->shopifySession;
-        $client = new Rest($session->getShop(), $session->getAccessToken());
+        $shop = Auth::user();
+        // $response = $shop->api()->rest('GET', '/admin/shop.json');
 
-        $response = $client->get('products');
-        $products = $response->getDecodedBody()['products'];
+        $products = $shop->api()->graph('
+                { products(first: 10) {
+                    edges {
+                        node {
+                        id
+                        title
+                        handle
+                        }
+                        cursor
+                    }
+                    pageInfo {
+                        hasNextPage
+                    } 
+                } } ');
+
+        dd($products);
 
         return view('admin.select-products', compact('products'));
     }
