@@ -12,12 +12,16 @@
         @csrf
         <div class="form-group">
             @foreach ($products as $product)
-                <div class="form-check">
+            <pre>
+                @php print_r($product) @endphp
+            </pre>
+
+                {{-- <div class="form-check">
                     <input type="checkbox" class="form-check-input" name="selected_products[]" value="{{ $product['id'] }}" id="product-{{ $product['id'] }}">
                     <label class="form-check-label" for="product-{{ $product['id'] }}">
                         {{ $product['title'] }}
                     </label>
-                </div>
+                </div> --}}
             @endforeach
         </div>
         <button type="submit" class="btn btn-primary">Save Selection</button>
