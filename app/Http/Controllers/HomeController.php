@@ -12,7 +12,7 @@ class HomeController extends Controller
         // $response = $shop->api()->rest('GET', '/admin/shop.json');
         $response = $shop->api()->graph('{ shop { name } }');
 
-        $response_products = $shop->api()->graph('{ products(first: 10) { id, title, handle } }');
+        $response_products = $shop->api()->graph('{ products(first: 10) }');
 
         echo '<pre> HERE : <hr />';
         print_r(json_encode($response));
