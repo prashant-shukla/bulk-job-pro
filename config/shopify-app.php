@@ -388,7 +388,6 @@ return [
         ],
         \Osiset\ShopifyApp\Messaging\Events\PlanActivatedEvent::class => [
             // \App\Listeners\MyListener::class,
-            \App\Listeners\SendPlanActivatedEmailListener::class,
         ],
     ],
 
