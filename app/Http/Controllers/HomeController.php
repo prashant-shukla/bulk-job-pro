@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
-use Shopify\Clients\Rest;
-use PHPShopify\ShopifySDK;
 
 class HomeController extends Controller
 {
@@ -17,9 +15,7 @@ class HomeController extends Controller
         print_r($request);
         echo '</pre>';
 
-        $shopify = ShopifySDK::config($this->getShopifyConfig());
-        $products = $shopify->Product->get();
-        $totalProducts = count($products);    
+        $totalProducts = 24;
 
         $shop = Auth::user(); // This assumes `name`, `email`, and other fields are present
         return view('welcome', [
