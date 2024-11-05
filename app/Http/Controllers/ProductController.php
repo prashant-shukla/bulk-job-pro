@@ -30,7 +30,9 @@ class ProductController extends Controller
                     } 
                 } } ');
 
-        dd($products);
+        // dd($products);
+
+        $products = [];
 
         return view('admin.select-products', compact('products'));
     }
