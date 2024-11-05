@@ -12,6 +12,9 @@ class ProductController extends Controller
     // Fetch products from Shopify
     public function index()
     {
+        echo 'HERE';
+        die; 
+        
         $shop = Auth::user();
         // $response = $shop->api()->rest('GET', '/admin/shop.json');
 
