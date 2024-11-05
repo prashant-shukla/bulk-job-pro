@@ -12,7 +12,7 @@ class HomeController extends Controller
         $request = $shop->api()->rest('GET', '/admin/shop.json');
         // $request = $shop->api()->graph('{ shop { name } }');
         echo '<pre>';
-        print_r($request['body']);
+        print_r($request);
         echo '</pre>';
 
         $totalProducts = 24;
