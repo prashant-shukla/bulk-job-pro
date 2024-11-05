@@ -376,18 +376,23 @@ return [
     'listen' => [
         \Osiset\ShopifyApp\Messaging\Events\AppInstalledEvent::class => [
             // \App\Listeners\MyListener::class,
+            'App\Listeners\AppInstalledListener',
         ],
         \Osiset\ShopifyApp\Messaging\Events\ShopAuthenticatedEvent::class => [
             // \App\Listeners\MyListener::class,
+            'App\Listeners\ShopAuthenticatedListener',
         ],
         \Osiset\ShopifyApp\Messaging\Events\ShopDeletedEvent::class => [
             // \App\Listeners\MyListener::class,
+            'App\Listeners\ShopDeletedListener',
         ],
         \Osiset\ShopifyApp\Messaging\Events\AppUninstalledEvent::class => [
             // \App\Listeners\MyListener::class,
+            'App\Listeners\AppUninstalledListener',
         ],
         \Osiset\ShopifyApp\Messaging\Events\PlanActivatedEvent::class => [
             // \App\Listeners\MyListener::class,
+            'App\Listeners\PlanActivatedListener',
         ],
     ],
 
