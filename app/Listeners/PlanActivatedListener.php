@@ -6,6 +6,8 @@ use App\Mail\PlanActivatedMail;
 use Illuminate\Container\Attributes\Auth;
 use Illuminate\Support\Facades\Mail;
 
+use Osiset\ShopifyApp\Messaging\Events\PlanActivatedEvent;
+
 class PlanActivatedListener
 {
     /**
@@ -19,7 +21,7 @@ class PlanActivatedListener
     /**
      * Handle the event.
      */
-    public function handle(): void
+    public function handle(PlanActivatedEvent $event): void
     {
         //
         $email = "admin@example.com"; // Set your recipient email here

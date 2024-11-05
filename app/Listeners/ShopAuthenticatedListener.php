@@ -6,6 +6,8 @@ use App\Mail\ShopAuthenticatedMail;
 use Illuminate\Container\Attributes\Auth;
 use Illuminate\Support\Facades\Mail;
 
+use Osiset\ShopifyApp\Messaging\Events\ShopAuthenticatedEvent;
+
 class ShopAuthenticatedListener
 {
     /**
@@ -19,7 +21,7 @@ class ShopAuthenticatedListener
     /**
      * Handle the event.
      */
-    public function handle(): void
+    public function handle(ShopAuthenticatedEvent $event): void
     {
         //
         $email = "admin@example.com"; // Set your recipient email here

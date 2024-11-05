@@ -6,6 +6,8 @@ use App\Mail\ShopDeletedMail;
 use Illuminate\Container\Attributes\Auth;
 use Illuminate\Support\Facades\Mail;
 
+use Osiset\ShopifyApp\Messaging\Events\ShopDeletedEvent;
+
 class ShopDeletedListener
 {
     /**
@@ -19,7 +21,7 @@ class ShopDeletedListener
     /**
      * Handle the event.
      */
-    public function handle(): void
+    public function handle(ShopDeletedEvent $event): void
     {
         //
         $email = "admin@example.com"; // Set your recipient email here
