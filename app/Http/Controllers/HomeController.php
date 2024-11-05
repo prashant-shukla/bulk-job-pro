@@ -11,9 +11,9 @@ class HomeController extends Controller
         $shop = Auth::user();
         $request = $shop->api()->rest('GET', '/admin/shop.json');
         // $request = $shop->api()->graph('{ shop { name } }');
-        // echo 'HERE: <pre>';
-        // print_r($request);
-        // echo '</pre>';
+        echo '<pre>';
+        print_r($request['body']);
+        echo '</pre>';
 
         $totalProducts = 24;
 
